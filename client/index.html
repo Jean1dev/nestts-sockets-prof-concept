@@ -3,7 +3,7 @@
 <head>
   <script src="socket.io.js"></script>
   <script>
-    const socket = io('http://localhost:8090', {
+    const socket = io('http://localhost:3000', {
       query: {
         userId: 1
       }
@@ -14,7 +14,7 @@
 
       socket.emit('events', { test: 'test' });
       socket.emit('identity', 2, response =>
-        console.log('Identity:', response),
+        console.log('resposta do servidor:', response),
       );
     });
     socket.on('events', function (data) {
